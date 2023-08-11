@@ -1,0 +1,39 @@
+// color
+$colors: (
+  white: #FFFFFF,
+  dark: #212529,
+  gray-100: #F8F9FA,
+  gray-400: #CED4DA,
+  gray-600: #6C757D,
+  main: #198754
+);
+$length-multiplier: 10;
+@each $color, $value in $colors {
+  .color-#{$color} {
+      background-color: $value !important;
+  }
+  .text-#{$color} {
+      color: $value !important;
+  }
+}
+@for $i from 1 through 10 {
+  .w-#{$i} {
+    width: #{$i * $length-multiplier}px;
+  }
+  .h-#{$i} {
+    height: #{$i * $length-multiplier}px; /* Use height property here */
+  }
+}
+.border-gray-400 {
+  border: 1px solid map-get($colors, gray-400);
+}
+.button-outline-primary {
+  color: map-get($colors, primary);
+  background-color: map-get($colors, white);
+  border: 1px solid map-get($colors, primary);
+}
+.button-primary {
+  background-color: map-get($colors, primary);
+  border: 1px solid map-get($colors, primary);
+  color: map-get($colors, white);
+}

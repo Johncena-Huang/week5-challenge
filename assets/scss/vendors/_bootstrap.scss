@@ -1,0 +1,20 @@
+@use '../utils/variables';
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * .75,
+  4: $spacer,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  7: $spacer * 1.75,
+  8: $spacer * 2
+);
+$custom-font-sizes: (
+  7: $font-size-base * 0.75
+);
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+$enable-rounded: true;
+@import "bootstrap/scss/bootstrap";
